@@ -10,5 +10,10 @@ class ShopController extends Controller
     {
         return view('shop/view');
     }
+
+    public function create()
+    {
+        return view('shop/create');
+    }
 }
 
