@@ -13,16 +13,8 @@ class Products extends Migration
      */
     public function up()
     {
-        Schema::create('products', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('desc');
-            $table->string('price');
-            $table->string('file');
-            $table->timestamps();
-        });
+        //
     }
-    
 
     /**
      * Reverse the migrations.
