@@ -14,6 +14,7 @@
 					<p>{{ $product->title }}</p>
 					<p>{{ $product->desc }}</p>
 					<a href="{{ url('/edit/' . $product->id)}}" class="text-center mt-5">edit</a>
+					<a href="{{ url('/delete/' . $product->id)}}" class="text-center mt-5">delete</a>
 				</div>
 				@endforeach
 			</div>

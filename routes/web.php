@@ -18,6 +18,7 @@ Route::get('/shop', 'ShopController@index');
 Route::get('/create', 'ProductController@create');
 Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/edit/{id}', 'ProductController@edit');
+Route::get('/delete/{id}', 'ProductController@delete');
 
 // Post routes
 

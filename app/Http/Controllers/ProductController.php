@@ -29,6 +29,14 @@ class ProductController extends Controller
         return redirect('/shop');
     }
 
+    public function delete($id)
+    {
+        $product = App\Product::find($id);
+
+        $product->delete();
+        return redirect('/shop');
+    }
+
     public function edit($id)
     {
         $product = App\Product::find($id);
@@ -44,7 +52,7 @@ class ProductController extends Controller
         ]);
 
         $product = App\Product::find($id);
-        
+
         $product->title = $data['title'];
         $product->desc = $data['desc'];
         $product->save();
