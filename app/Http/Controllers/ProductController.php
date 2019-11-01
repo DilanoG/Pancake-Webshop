@@ -28,4 +28,27 @@ class ProductController extends Controller
         $product->save();
         return redirect('/shop');
     }
+
+    public function edit($id)
+    {
+        $product = App\Product::find($id);
+
+        return view('shop/edit', compact('product'));
+    }
+
+    public function postEdit(Request $request, $id)
+    {
+        $data = $request->validate([
+            'title' => 'required',
+            'desc' => 'required',
+        ]);
+
+        $product = App\Product::find($id);
+        
+        $product->title = $data['title'];
+        $product->desc = $data['desc'];
+        $product->save();
+
+        return redirect('/shop');
+    }
 }

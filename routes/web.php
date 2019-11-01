@@ -17,8 +17,10 @@ Route::get('/home', 'HomeController@index');
 Route::get('/shop', 'ShopController@index');
 Route::get('/create', 'ProductController@create');
 Route::get('/logout', 'Auth\LoginController@logout');
+Route::get('/edit/{id}', 'ProductController@edit');
 
 // Post routes
 
 Route::post('/create', 'ProductController@postCreate');
+Route::post('/edit/{id}', 'ProductController@postEdit');
 
