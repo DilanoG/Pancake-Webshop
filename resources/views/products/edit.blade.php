@@ -8,7 +8,7 @@
             </span>
         </div>
     @endif
-    <form action="{{ url('/edit/' . $product->id)}}" method="post" autocomplete="off">
+    <form action="{{ url('product/edit/' . $product->id)}}" method="post" autocomplete="off">
         @csrf
         <p>Title</p>
         <input value="{{ $product->title }}" class="border border-black" name="title"/>

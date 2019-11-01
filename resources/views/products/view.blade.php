@@ -13,12 +13,12 @@
 				<div class="w-1/3 border border-black">
 					<p>{{ $product->title }}</p>
 					<p>{{ $product->desc }}</p>
-					<a href="{{ url('products/edit/' . $product->id)}}" class="text-center mt-5">edit</a>
-					<a href="{{ url('products/delete/' . $product->id)}}" class="text-center mt-5">delete</a>
+					<a href="{{ url('product/edit/' . $product->id)}}" class="text-center mt-5">edit</a>
+					<a href="{{ url('product/delete/' . $product->id)}}" class="text-center mt-5">delete</a>
 				</div>
 				@endforeach
 			</div>
-			<a href="{{ url('products/create')}}" class="text-center mt-5">Create</a>
+			<a href="{{ url('product/create')}}" class="text-center mt-5">Create</a>
 		</div>
 	</div>
 	<div class="flex">

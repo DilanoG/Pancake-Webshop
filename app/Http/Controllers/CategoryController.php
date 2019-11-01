@@ -39,7 +39,7 @@ class CategoryController extends Controller
     {
         $category = App\Category::find($id);
 
-        return view('shop/edit', compact('product'));
+        return view('categories/edit', compact('category'));
     }
 
     public function postEdit(Request $request, $id)
