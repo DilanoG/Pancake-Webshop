@@ -5,57 +5,53 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App;
 
-class ProductController extends Controller
+class CategoryController extends Controller
 {
   	public function create()
     {
-        return view('products/create');
+        return view('categories/create');
     }
 
     public function postCreate(Request $request)
     {
         $data = $request->validate([
             'title' => 'required',
-            'desc' => 'required',
         ]);
 
     	// dd($data);
 
-        $product = new App\Product;
+        $category = new App\Category;
 
-        $product->title = $data['title'];
-        $product->desc = $data['desc'];
-        $product->save();
+        $category->title = $data['title'];
+        $category->save();
         return redirect('/shop');
     }
 
     public function delete($id)
     {
-        $product = App\Product::find($id);
+        $category = App\Category::find($id);
 
-        $product->delete();
+        $category->delete();
         return redirect('/shop');
     }
 
     public function edit($id)
     {
-        $product = App\Product::find($id);
+        $category = App\Category::find($id);
 
-        return view('products/edit', compact('product'));
+        return view('shop/edit', compact('product'));
     }
 
     public function postEdit(Request $request, $id)
     {
         $data = $request->validate([
             'title' => 'required',
-            'desc' => 'required',
         ]);
 
-        $product = App\Product::find($id);
+        $category = App\Category::find($id);
 
-        $product->title = $data['title'];
-        $product->desc = $data['desc'];
-        $product->save();
+        $category->title = $data['title'];
+        $category->save();
 
         return redirect('/shop');
     }
