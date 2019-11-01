@@ -2,7 +2,7 @@
 <html>
 <head>
 	@include('layouts.app')
-	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+	
 </head>
 <body>
 	<div class="w-8/12 bg-red-400 m-auto text-white" style="height: 700px">

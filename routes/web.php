@@ -15,7 +15,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 Route::get('/shop', 'ShopController@index');
-Route::get('/create', 'ShopController@create');
-Route::get('logout', 'Auth\LoginController@logout');
+Route::get('/create', 'ProductController@create');
+Route::get('/logout', 'Auth\LoginController@logout');
 
+// Post routes
+
+Route::post('/create', 'ProductController@postCreate');
 
