@@ -1,4 +1,4 @@
-@include('layouts.app')
+@include('layouts/app')
 <div class="flex justify-center w-full mt-10">
     @if ($errors)
         <div class="text-red rounded mt-2">

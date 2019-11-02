@@ -17,6 +17,7 @@ class ProductController extends Controller
         $data = $request->validate([
             'title' => 'required',
             'desc' => 'required',
+            'price' => 'required',
         ]);
 
     	// dd($data);
@@ -25,6 +26,7 @@ class ProductController extends Controller
 
         $product->title = $data['title'];
         $product->desc = $data['desc'];
+        $product->price = $data['price'];
         $product->save();
         return redirect('/shop');
     }
@@ -49,12 +51,14 @@ class ProductController extends Controller
         $data = $request->validate([
             'title' => 'required',
             'desc' => 'required',
+            'price' => 'required',
         ]);
 
         $product = App\Product::find($id);
 
         $product->title = $data['title'];
         $product->desc = $data['desc'];
+        $product->price = $data['price'];
         $product->save();
 
         return redirect('/shop');

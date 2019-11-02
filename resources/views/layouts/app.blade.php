@@ -23,10 +23,10 @@
 </head>
     <div class="m-auto p-10 flex items-center justify-center">
         <div class="flex" style="font-family: Futura, Trebuchet MS, Arial, serif;">
-            <ul class="mr-2"><a class="text-black" href="{{ url('/home')}}">Home</a></ul>
+            <ul class=""><a class="text-black" href="{{ url('/home')}}">Home</a></ul>
             <ul class=""><a class="text-black" href="{{ url('/shop')}}">Shop</a></ul>
         </div>
-        <h1 class="text-3xl mx-5" style="font-family: Palatino Linotype, serif;">Webshop</h1>
+        <h1 class="text-3xl mx-10" style="font-family: Palatino Linotype, serif;">Webshop</h1>
         <div class="row" style="font-family: Futura, Trebuchet MS, Arial, serif;">
             @if (Auth::check()) 
                 <div class="">

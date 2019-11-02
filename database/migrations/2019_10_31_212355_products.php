@@ -17,6 +17,7 @@ class Products extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('desc');
+            $table->string('price');
         });
     }
 

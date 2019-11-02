@@ -1,4 +1,4 @@
-@include('layouts.app')
+@include('layouts/app')
 
 <h1>Admin panel</h1>
 <div class="flex justify-center">
