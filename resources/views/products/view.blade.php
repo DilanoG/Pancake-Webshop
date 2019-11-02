@@ -24,18 +24,18 @@
 		</div>
 	</div>
 	<div class="flex">
-		<div class="bg-gray-300 w-full h-screen mb-5 p-2" style="margin-left: 400px; margin-right: 400px">
-			<h1 class="text-center mt-24 text-3xl">Catagories</h1>
-			<div class="w-full flex">
+		<div class="bg-gray-300 w-full h-screen mb-5 p-2" style="margin-left: 320px; margin-right: 320px; background-color: #F3F3F5;">
+			<h1 class="text-center mt-24 text-3xl font-hairline">Categories</h1>
+			<div class="w-full flex flex-wrap mt-10 px-32">
 				@foreach ($categories as $category)
-				<div class="w-1/3 border border-black">
+				<div class="w-full font-hairline mt-3" style="background-color: #EBCCDD;">
 					<p>{{ $category->title }}</p>
 					<a href="{{ url('category/edit/' . $category->id)}}" class="text-center mt-5">edit</a>
 					<a href="{{ url('category/delete/' . $category->id)}}" class="text-center mt-5">delete</a>
 				</div>
 				@endforeach
 			</div>
-			<a href="{{ url('category/create')}}" class="text-center mt-5">Create</a>
+			<p class="text-center mt-5"><a href="{{ url('category/create')}}">Create</a></p>
 		</div>
 	</div>
 </body>
