@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App;
 
-class ShopController extends Controller
+class PageController extends Controller
 {
     public function index()
     {
@@ -14,11 +14,11 @@ class ShopController extends Controller
         return view('products/view', compact('products', 'categories'));
     }
 
-    public function admin()
+    public function profile()
     {
     	$products = App\Product::All();
         $categories = App\Category::All();
-        return view('pages/admin', compact('products', 'categories'));
+        return view('pages/profile', compact('products', 'categories'));
     }
 }
 

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	@include('layouts/app')
+	@include('layouts/header')
 </head>
 <body>
 	<div class="w-8/12 m-auto text-white" style="height: 700px; background-color: #EBCCDD;">

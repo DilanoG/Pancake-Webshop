@@ -22,16 +22,18 @@
 
 </head>
     <div class="m-auto p-10 flex items-center justify-center">
-        <div class="flex" style="font-family: Futura, Trebuchet MS, Arial, serif;">
-            <ul class=""><a class="text-black" href="{{ url('/home')}}">Home</a></ul>
-            <ul class=""><a class="text-black" href="{{ url('/shop')}}">Shop</a></ul>
+        <div class="" style="font-family: Futura, Trebuchet MS, Arial, serif;">
+            <p class="inline"><a class="text-black" href="{{ url('/home')}}">Home</a></p>
+            <p class="inline"><a class="text-black" href="{{ url('/shop')}}">Shop</a></p>
+            <p class="inline"><a class="text-black" href="{{ url('/')}}">Me</a></p>
         </div>
-        <h1 class="text-3xl mx-10" style="font-family: Palatino Linotype, serif;">Webshop</h1>
+        <h1 class="text-3xl mx-10 relative" style="font-family: Palatino Linotype, serif;">Webshop</h1>
         <div class="row" style="font-family: Futura, Trebuchet MS, Arial, serif;">
             @if (Auth::check()) 
                 <div class="">
                     <p class="inline"><a class="text-black" href="{{ url('/home')}}">{{ auth()->user()->name }}</a></p>
-                    <a href="logout" class="text-black hover:text-red no-underline">Logout</a>                             
+                    <p class="inline"><a class="text-black" href="{{ url('/logout')}}">Logout</a></p>
+                    <p class="inline"><a class="text-black" href="{{ url('/')}}">Cart</a></p>
                 </div>
                 @else
                     <a class="text-black no-underline hover:underline my-auto" href="{{ url('/login')}}">Login</a>

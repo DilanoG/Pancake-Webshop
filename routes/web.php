@@ -14,10 +14,10 @@
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/shop', 'ShopController@index');
+Route::get('/shop', 'PageController@index');
 Route::get('/logout', 'Auth\LoginController@logout');
 
-Route::get('/admin', 'ShopController@admin');
+Route::get('/profile', 'ShopController@profile');
 
 // Products routes
 Route::get('/product/create', 'ProductController@create');
