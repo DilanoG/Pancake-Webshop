@@ -16,8 +16,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('/shop', 'PageController@index');
 Route::get('/logout', 'Auth\LoginController@logout');
-
-Route::get('/profile', 'ShopController@profile');
+Route::get('/profile', 'PageController@profile');
+Route::get('/item/{id}', 'PageController@item');
 
 // Products routes
 Route::get('/product/create', 'ProductController@create');

@@ -18,6 +18,7 @@ class ProductController extends Controller
             'title' => 'required',
             'desc' => 'required',
             'price' => 'required',
+            'img' => 'required',
         ]);
 
     	// dd($data);
@@ -27,6 +28,7 @@ class ProductController extends Controller
         $product->title = $data['title'];
         $product->desc = $data['desc'];
         $product->price = $data['price'];
+        $product->img = $data['img'];
         $product->save();
         return redirect('/shop');
     }

@@ -1,6 +1,6 @@
 @include('layouts/header')
 
-<div class="container">
+<div class="container m-auto text-center">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

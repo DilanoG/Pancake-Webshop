@@ -25,13 +25,12 @@
         <div class="" style="font-family: Futura, Trebuchet MS, Arial, serif;">
             <p class="inline"><a class="text-black" href="{{ url('/home')}}">Home</a></p>
             <p class="inline"><a class="text-black" href="{{ url('/shop')}}">Shop</a></p>
-            <p class="inline"><a class="text-black" href="{{ url('/')}}">Me</a></p>
         </div>
-        <h1 class="text-3xl mx-10 relative" style="font-family: Palatino Linotype, serif;">Webshop</h1>
+        <h1 class="text-3xl mx-10" style="font-family: Palatino Linotype, serif;">Webshop</h1>
         <div class="row" style="font-family: Futura, Trebuchet MS, Arial, serif;">
             @if (Auth::check()) 
                 <div class="">
-                    <p class="inline"><a class="text-black" href="{{ url('/home')}}">{{ auth()->user()->name }}</a></p>
+                    <p class="inline"><a class="text-black" href="{{ url('/profile')}}">{{ auth()->user()->name }}</a></p>
                     <p class="inline"><a class="text-black" href="{{ url('/logout')}}">Logout</a></p>
                     <p class="inline"><a class="text-black" href="{{ url('/')}}">Cart</a></p>
                 </div>
