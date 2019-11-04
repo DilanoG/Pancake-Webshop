@@ -32,7 +32,7 @@
                 <div class="">
                     <p class="inline"><a class="text-black" href="{{ url('/profile')}}">{{ auth()->user()->name }}</a></p>
                     <p class="inline"><a class="text-black" href="{{ url('/logout')}}">Logout</a></p>
-                    <p class="inline"><a class="text-black" href="{{ url('/')}}">Cart</a></p>
+                    <p class="inline"><a class="text-black" href="{{ url('/cart')}}">Cart</a></p>
                 </div>
                 @else
                     <a class="text-black no-underline hover:underline my-auto" href="{{ url('/login')}}">Login</a>

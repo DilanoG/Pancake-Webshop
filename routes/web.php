@@ -18,6 +18,7 @@ Route::get('/shop', 'PageController@index');
 Route::get('/logout', 'Auth\LoginController@logout');
 Route::get('/profile', 'PageController@profile');
 Route::get('/item/{id}', 'PageController@item');
+Route::get('/cart', 'CartController@index');
 
 // Products routes
 Route::get('/product/create', 'ProductController@create');

@@ -15,7 +15,7 @@
 			<p class="font-hairline mt-5">Quantity</p>
 			<input class="mt-3 border border-black p-2" type="number" value="1"></input><br>
 			<button class="bg-black mt-8 px-24 py-2 text-white font-hairline">ADD TO CART</button>
-			<p class="font-hairline mt-10">PRODUCT INFO</p>
+			<p class="font-hairline mt-10">PRODUCT INFO:</p>
 			<p class="mt-5">{{ $product->desc }}</p>
 		</div>
 	</div>
