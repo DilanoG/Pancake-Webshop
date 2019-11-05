@@ -22,12 +22,12 @@
 
 </head>
     <div class="m-auto p-10 flex items-center justify-center">
-        <div class="" style="font-family: Futura, Trebuchet MS, Arial, serif;">
+        <div class="font-hairline">
             <p class="inline"><a class="text-black" href="{{ url('/home')}}">Home</a></p>
             <p class="inline"><a class="text-black" href="{{ url('/shop')}}">Shop</a></p>
         </div>
         <h1 class="text-3xl mx-10" style="font-family: Palatino Linotype, serif;">Webshop</h1>
-        <div class="row" style="font-family: Futura, Trebuchet MS, Arial, serif;">
+        <div class="row font-hairline">
             @if (Auth::check()) 
                 <div class="">
                     <p class="inline"><a class="text-black" href="{{ url('/profile')}}">{{ auth()->user()->name }}</a></p>

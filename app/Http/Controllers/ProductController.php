@@ -12,13 +12,19 @@ class ProductController extends Controller
         return view('products/create');
     }
 
+    public function item($id)
+    {
+        $product = App\Product::find($id);
+        return view('products/item', compact('product'));
+    }
+
     public function postCreate(Request $request)
     {
         $data = $request->validate([
             'title' => 'required',
             'desc' => 'required',
             'price' => 'required',
-            'img' => 'required',
+            'img' => 'required'
         ]);
 
     	// dd($data);
@@ -36,7 +42,6 @@ class ProductController extends Controller
     public function delete($id)
     {
         $product = App\Product::find($id);
-
         $product->delete();
         return redirect('/shop');
     }
@@ -54,6 +59,7 @@ class ProductController extends Controller
             'title' => 'required',
             'desc' => 'required',
             'price' => 'required',
+            'img' => 'required',
         ]);
 
         $product = App\Product::find($id);
@@ -61,6 +67,7 @@ class ProductController extends Controller
         $product->title = $data['title'];
         $product->desc = $data['desc'];
         $product->price = $data['price'];
+        $product->price = $data['img'];
         $product->save();
 
         return redirect('/shop');

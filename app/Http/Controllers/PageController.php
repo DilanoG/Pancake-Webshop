@@ -11,7 +11,7 @@ class PageController extends Controller
     {
         $products = App\Product::All();
         $categories = App\Category::All();
-        return view('products/view', compact('products', 'categories'));
+        return view('products/index', compact('products', 'categories'));
     }
 
     public function profile()
@@ -19,12 +19,6 @@ class PageController extends Controller
     	$products = App\Product::All();
         $categories = App\Category::All();
         return view('pages/profile', compact('products', 'categories'));
-    }
-
-    public function item($id)
-    {
-        $product = App\Product::find($id);
-        return view('pages/item', compact('product'));
     }
 }
 

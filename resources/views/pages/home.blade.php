@@ -7,3 +7,4 @@
 	</div>
 	<button class="text-black text-base px-4 py-2 ml-32 mt-20 bg-white font-hairline"><a href="{{ url('/shop')}}">Shop Now</a></button>
 </div>
+
