@@ -18,7 +18,6 @@
 		<p class="text-center h-10 font-hairline"><a href="{{ url('product/create')}}">Create</a></p>
 	</div>
 </div>
-{{--{{
 <div class="flex">
 	<div class="bg-gray-300 w-full h-screen mb-5 p-2" style="margin-left: 320px; margin-right: 320px; background-color: #F3F3F5;">
 		<h1 class="text-center mt-24 text-3xl font-hairline">Categories</h1>
@@ -34,4 +33,3 @@
 		<p class="text-center mt-5"><a href="{{ url('category/create')}}">Create</a></p>
 	</div>
 </div>
-}}--}}

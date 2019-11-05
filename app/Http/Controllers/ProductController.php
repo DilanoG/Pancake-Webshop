@@ -9,7 +9,8 @@ class ProductController extends Controller
 {
   	public function create()
     {
-        return view('products/create');
+        $categories = App\Category::All();
+        return view('products/create', compact('categories'));
     }
 
     public function item($id)
@@ -24,18 +25,24 @@ class ProductController extends Controller
             'title' => 'required',
             'desc' => 'required',
             'price' => 'required',
-            'img' => 'required'
+            'category' => 'required',
         ]);
-
-    	// dd($data);
 
         $product = new App\Product;
 
         $product->title = $data['title'];
         $product->desc = $data['desc'];
         $product->price = $data['price'];
-        $product->img = $data['img'];
+
+        // 1
         $product->save();
+
+        foreach($request->category as $category){
+            $product->categories()->attach($category);
+        }
+
+
+
         return redirect('/shop');
     }
 
@@ -59,7 +66,6 @@ class ProductController extends Controller
             'title' => 'required',
             'desc' => 'required',
             'price' => 'required',
-            'img' => 'required',
         ]);
 
         $product = App\Product::find($id);
@@ -67,7 +73,6 @@ class ProductController extends Controller
         $product->title = $data['title'];
         $product->desc = $data['desc'];
         $product->price = $data['price'];
-        $product->price = $data['img'];
         $product->save();
 
         return redirect('/shop');

@@ -17,6 +17,12 @@
         <input class="border border-black" name="desc" /><br>
         <p>Price</p>
         <input class="border border-black" name="price" /><br>
+        <p>Category</p>
+        <select multiple name="category[]">
+        @foreach ($categories as $category)
+            <option value="{{ $category->id }}" >{{ $category->title }}</option>
+        @endforeach
+        </select>
         <button class="border border-black px-3 py-2 mt-4 bg-white">Add Product</button>
     </form>
 </div>
