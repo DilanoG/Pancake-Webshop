@@ -6,9 +6,14 @@
 			@foreach ($products as $product)
 				<div class="w-1/3 px-2 mb-3">
 					<div class="text-center" style="background-color: #EBCCDD; height: 300px;">
-						<a href="{{ url('product/' . $product->id)}}" class="text-center mt-5 font-hairline">view</a>
-						<a href="{{ url('product/edit/' . $product->id)}}" class="text-center mt-5 font-hairline">edit</a>
-						<a href="{{ url('product/delete/' . $product->id)}}" class="text-center mt-5 font-hairline">delete</a>
+						<img class="h-48 m-auto pt-5" src="Pancake.png"></img>
+						<div class="mt-16">
+							<a href="{{ url('product/' . $product->id)}}" class="text-center font-hairline mx-3">VIEW</a>
+							<span>-</span>
+							<a href="{{ url('product/edit/' . $product->id)}}" class="text-center font-hairline mx-3">EDIT</a>
+							<span>-</span>
+							<a href="{{ url('product/delete/' . $product->id)}}" class="text-center font-hairline mx-3">DELETE</a>
+						</div>
 					</div>
 					<p class="text-center font-hairline">{{ $product->title }}</p>
 					<p class="text-center ">{{ $product->price }}</p>

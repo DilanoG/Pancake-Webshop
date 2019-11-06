@@ -15,28 +15,29 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
 
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 
-</head>
-    <div class="m-auto p-10 flex items-center justify-center">
-        <div class="font-hairline">
-            <p class="inline"><a class="text-black" href="{{ url('/home')}}">Home</a></p>
-            <p class="inline"><a class="text-black" href="{{ url('/shop')}}">Shop</a></p>
-        </div>
-        <h1 class="text-3xl mx-10" style="font-family: Palatino Linotype, serif;">Webshop</h1>
+    </head>
+    <div class="m-auto flex items-center justify-center py-8">
+        <ul class="font-hairline text-sm">
+            <li class="inline-block mx-5"><a href="{{ url('/home')}}">HOME</a></li>
+            <li class="inline-block mx-5"><a href="{{ url('/shop')}}">SHOP</a></li>
+            <li class="inline-block mx-5"><a href="{{ url('/shop')}}">ABOUT ME</a></li>
+            <li class="inline-block mx-5"><a href="{{ url('/shop')}}">CONTACT</a></li>
+        </ul>
+        <h1 class="text-3xl mx-10" style="font-family: Palatino Linotype, serif; margin-right: 180px;">Webshop</h1>
         <div class="row font-hairline">
             @if (Auth::check()) 
-                <div class="">
-                    <p class="inline"><a class="text-black" href="{{ url('/profile')}}">{{ auth()->user()->name }}</a></p>
-                    <p class="inline"><a class="text-black" href="{{ url('/logout')}}">Logout</a></p>
-                    <p class="inline"><a class="text-black" href="{{ url('/cart')}}">Cart</a></p>
-                </div>
+                    <p class="inline-block mx-5"><a href="{{ url('/profile')}}">{{ auth()->user()->name }}</a></p>
+                    <p class="inline-block mx-5"><a href="{{ url('/logout')}}">Logout</a></p>
+                    <p class="inline-block mx-5"><a href="{{ url('/cart')}}">Cart</a></p>
                 @else
                     <a class="text-black no-underline hover:underline my-auto" href="{{ url('/login')}}">Login</a>
-                    <a class="text-black no-underline hover:underline my-auto" href="{{ url('/register')}}">Register</a>
             @endif
         </div>
     </div>

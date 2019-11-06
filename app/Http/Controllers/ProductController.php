@@ -40,9 +40,7 @@ class ProductController extends Controller
         foreach($request->category as $category){
             $product->categories()->attach($category);
         }
-
-
-
+        
         return redirect('/shop');
     }
 
