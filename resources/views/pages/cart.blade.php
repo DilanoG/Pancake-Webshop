@@ -3,11 +3,11 @@
 @if($items != null)
 @foreach($items as $item)
 <div class="mt-20">
-	<div class="border border-black">
+	<div>
 		<p>ID</p>
 		{{ $item['id'] }}
 	</div>
-	<div class="border border-black">
+	<div>
 		<p>Title</p>
 		{{ $item['title'] }}
 	</div>

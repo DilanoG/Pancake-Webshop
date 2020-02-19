@@ -7,6 +7,11 @@ use App;
 
 class CartController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function addToCart(Request $request, $id)
     {
     	$validated = $request->validate([

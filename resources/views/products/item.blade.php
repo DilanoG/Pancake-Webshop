@@ -1,4 +1,4 @@
-		@include('layouts/header')
+@include('layouts/header')
 <div class="bg-gray-300 mb-5" style="background-color: #F3F3F5; margin-right: 320px; margin-left: 320px; height: 900px;">
 	<div class="font-hairline pt-24 px-48">
     	<a href="{{ url('/home')}}">Home</a><span> /</span>
@@ -11,8 +11,7 @@
 		<div class="w-5-12 ml-8">
 			<form method="POST" action="{{ url('cart/add/' . $product->id)}}" class="">
 				@csrf
-				<h1 class="font-hairline text-2xl">{{ $product->title }}</h1>
-				<h1 class="text-2xl"><span>ID: </span>{{ $product->id }}</h1><br>
+				<h1 class="font-hairline text-2xl">{{ $product->title }}</h1>`
 				<p>{{ $product->price }}</p>
 				<p class="font-hairline mt-5">Quantity</p>
 				<input name="quantity" class="mt-3 border border-black p-2" type="number" value="1"></input><br>

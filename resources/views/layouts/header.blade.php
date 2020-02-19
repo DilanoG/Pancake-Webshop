@@ -27,8 +27,8 @@
         <ul class="font-hairline text-sm">
             <li class="inline-block mx-5"><a href="{{ url('/home')}}">HOME</a></li>
             <li class="inline-block mx-5"><a href="{{ url('/shop')}}">SHOP</a></li>
-            <li class="inline-block mx-5"><a href="{{ url('/shop')}}">ABOUT ME</a></li>
-            <li class="inline-block mx-5"><a href="{{ url('/shop')}}">CONTACT</a></li>
+            <li class="inline-block mx-5"><a href="{{ url('/home')}}">ABOUT ME</a></li>
+            <li class="inline-block mx-5"><a href="{{ url('/home')}}">CONTACT</a></li>
         </ul>
         <h1 class="text-3xl mx-10" style="font-family: Palatino Linotype, serif; margin-right: 180px;">Webshop</h1>
         <div class="row font-hairline">
@@ -38,6 +38,7 @@
                     <p class="inline-block mx-5"><a href="{{ url('/cart')}}">Cart</a></p>
                 @else
                     <a class="text-black no-underline hover:underline my-auto" href="{{ url('/login')}}">Login</a>
+                    <a class="text-black no-underline hover:underline my-auto" href="{{ url('/')}}">Register</a>
             @endif
         </div>
     </div>

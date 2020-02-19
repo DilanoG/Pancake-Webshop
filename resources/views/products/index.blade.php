@@ -6,7 +6,6 @@
 			@foreach ($products as $product)
 				<div class="w-1/3 px-2 mb-3">
 					<div class="text-center" style="background-color: #EBCCDD; height: 300px;">
-						<img class="h-48 m-auto pt-5" src="Pancake.png"></img>
 						<div class="mt-16">
 							<a href="{{ url('product/' . $product->id)}}" class="text-center font-hairline mx-3">VIEW</a>
 							<span>-</span>

@@ -8,6 +8,11 @@ use Session;
 
 class ShoppingCart extends Controller
 {
+	public function __construct()
+    {
+        $this->middleware('auth');
+    }
+	
 	public function getItems(){
 		return Session::get('cart');
 	}

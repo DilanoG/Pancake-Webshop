@@ -12,7 +12,7 @@
     <form action="{{ url('product/create')}}" method="post" autocomplete="off">
         @csrf
         <p>Title</p>
-        <input class="border border-black" name="title"/>
+        <input class="border border-black" name="title" />
         <p>Description</p>
         <input class="border border-black" name="desc" /><br>
         <p>Price</p>
