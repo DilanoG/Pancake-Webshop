@@ -38,7 +38,7 @@
                     <p class="inline-block mx-5"><a href="{{ url('/cart')}}">Cart</a></p>
                 @else
                     <a class="text-black no-underline hover:underline my-auto" href="{{ url('/login')}}">Login</a>
-                    <a class="text-black no-underline hover:underline my-auto" href="{{ url('/')}}">Register</a>
+                    <a class="text-black no-underline hover:underline my-auto" href="{{ url('/register')}}">Register</a>
             @endif
         </div>
     </div>

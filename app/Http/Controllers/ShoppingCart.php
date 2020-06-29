@@ -47,7 +47,7 @@ class ShoppingCart extends Controller
             'id' => $id,
             'title' => $old['title'],
             'quantity' => $data['quantity'],
-			'price' => $old['price'],
+			'price' => $old['price']
         ];
 		Session::push('cart', $item);
 
@@ -61,7 +61,7 @@ class ShoppingCart extends Controller
 	public function getSpecific($id){
 		$items = $this->getItems();
 		if($items === null){
-			return false;
+			return false;	
 		} else{
 			$specific = Arr::where($items, function ($value, $key) use ($id) {
 				return $value['id'] == $id;
