@@ -30,7 +30,7 @@
             <li class="inline-block mx-5"><a href="{{ url('/home')}}">About Me</a></li>
             <li class="inline-block mx-32 text-3xl" style="font-family: Palatino Linotype, serif;">Webshop</li>
             @if (Auth::check()) 
-                    <p class="inline-block mx-5 text-base"><a href="{{ url('/profile')}}">{{ auth()->user()->name }}</a></p>
+                    <p class="inline-block mx-5 text-base"><a href="{{ url('/home')}}">{{ auth()->user()->name }}</a></p>
                     <p class="inline-block mx-5 text-base"><a href="{{ url('/logout')}}">Logout</a></p>
                     <p class="inline-block mx-5 text-base"><a href="{{ url('/cart')}}">Cart</a></p>
                 @else

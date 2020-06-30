@@ -34,7 +34,7 @@
             @endphp
             <div class="flex justify-end mt-5 items-center">
                 <p class="mr-4">Total: ${{ $price }}</p>
-                <a href="{{ url('/cart') }}" class="py-2 px-10 m-2" href="#">Pay</a>
+                <a href="{{ url('/cart/order') }}" class="py-2 px-10 m-2" href="#">Pay</a>
                 <a href="{{ url('/cart/clear')}}">
 					<button class="bg-black text-white py-2 px-3 m-2">Clear cart</button>
 				</a>
