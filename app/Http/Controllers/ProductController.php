@@ -9,19 +9,19 @@ class ProductController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
-    }
-
-  	public function create()
-    {
-        $categories = App\Category::All();
-        return view('products/create', compact('categories'));
+        $this->middleware('role');
     }
 
     public function item($id)
     {
         $product = App\Product::find($id);
-        return view('products/item', compact('product'));
+        return view('pages/item', compact('product'));
+    }
+
+    public function create()
+    {
+        $categories = app\Category::all();
+        return view('products/create', compact('categories'));
     }
 
     public function postCreate(Request $request)
@@ -30,7 +30,7 @@ class ProductController extends Controller
             'title' => 'required',
             'desc' => 'required',
             'price' => 'required',
-            'category' => 'required',
+            'category_id' => "required",
         ]);
 
         $product = new App\Product;
@@ -38,22 +38,18 @@ class ProductController extends Controller
         $product->title = $data['title'];
         $product->desc = $data['desc'];
         $product->price = $data['price'];
+        $product->category_id = $data['category_id'];
 
-        // 1
         $product->save();
-
-        foreach($request->category as $category){
-            $product->categories()->attach($category);
-        }
         
-        return redirect('/shop');
+        return redirect('/admin');
     }
 
-    public function delete($id)
+    public function delete($id) 
     {
         $product = App\Product::find($id);
         $product->delete();
-        return redirect('/shop');
+        return redirect('/admin');
     }
 
     public function edit($id)
@@ -78,6 +74,6 @@ class ProductController extends Controller
         $product->price = $data['price'];
         $product->save();
 
-        return redirect('/shop');
+        return redirect('/admin');
     }
 }

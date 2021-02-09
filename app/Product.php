@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     public $timestamps = false;
-
-    public function categories(){
-        return $this->belongsToMany('App\Category', 'categories_products');
+    public function orders(){
+        return $this->belongsToMany('App\Order', 'orders_products');
     }
 }

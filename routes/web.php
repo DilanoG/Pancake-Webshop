@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,30 +13,36 @@
 |
 */
 
-Auth::routes();
-
+// Pages routes
 Route::get('/home', 'HomeController@index');
-Route::get('/shop', 'PageController@index');
 Route::get('/logout', 'Auth\LoginController@logout');
+Route::get('/profile', 'ProfileController@index');
 Route::get('/order', 'OrderController@index');
 Route::get('/cart', 'CartController@index');
-
-// Products routes
-Route::get('/product/create', 'ProductController@create');
-Route::get('/product/edit/{id}', 'ProductController@edit');
-Route::get('/product/{id}', 'ProductController@item');
-Route::get('/product/delete/{id}', 'ProductController@delete');
-Route::post('/product/create', 'ProductController@postCreate');
-Route::post('/product/edit/{id}', 'ProductController@postEdit');
+Route::get('/admin', 'AdminController@index');
 
 // Categories routes
 Route::get('/category/create', 'CategoryController@create');
-Route::get('/category/edit/{id}', 'CategoryController@edit');
-Route::get('/category/delete/{id}', 'CategoryController@delete');
 Route::post('/category/create', 'CategoryController@postCreate');
+Route::get('/category/delete/{id}', 'CategoryController@delete');
+Route::get('/category/edit/{id}', 'CategoryController@edit');
 Route::post('/category/edit/{id}', 'CategoryController@postEdit');
+
+// Product Routes
+
+Route::get('/product/create', 'ProductController@create');
+Route::post('/product/create', 'ProductController@postCreate');
+Route::get('/product/delete/{id}', 'ProductController@delete');
+Route::get('/product/edit/{id}', 'ProductController@edit');
+Route::post('/product/edit/{id}', 'ProductController@postEdit');
+Route::get('/product/{id}', 'ProductController@item');
+
+// Cart Routes
 
 Route::post('/cart/add/{id}', 'CartController@addToCart');
 Route::get('/cart/delete/{id}', 'CartController@deleteItem');
 Route::post('/cart/update/{id}', 'CartController@updateCart');
 Route::get('/cart/clear', 'CartController@clearCart');
+Route::get('/cart/pay', 'OrderController@pay');
+
+Auth::routes();

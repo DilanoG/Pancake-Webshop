@@ -11,7 +11,14 @@ class CartController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
+    public function index()
+    {
+        $cart = new ShoppingCart();
+        $items = $cart->getItems();
+        return view('pages/cart', compact('items'));
+    }
+
     public function addToCart(Request $request, $id)
     {
     	$validated = $request->validate([
@@ -38,23 +45,16 @@ class CartController extends Controller
         }
     }
 
-    public function index()
-    {
+    public function deleteItem($id){
         $cart = new ShoppingCart();
-        $items = $cart->getItems();
-        return view('pages/cart', compact('items'));
+        $cart->deleteItem($id);
+        
+        return redirect()->action('CartController@index');
     }
 
     public function clearCart(){
         $cart = new ShoppingCart();
         $cart->clearCart();
-        
-        return redirect()->action('CartController@index');
-    }
-
-    public function deleteItem($id){
-        $cart = new ShoppingCart();
-        $cart->deleteItem($id);
         
         return redirect()->action('CartController@index');
     }
@@ -65,7 +65,8 @@ class CartController extends Controller
     	]);
 
         $cart = new ShoppingCart();
-        $cart->updateItem($valData , $id);
+        $cart->updateItem($valData, $id);
         return redirect()->action('CartController@index');
     } 
 }
+    

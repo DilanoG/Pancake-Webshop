@@ -1,6 +1,6 @@
 @include('layouts/header')
 <body>
-	<div class="container mx-auto">
+	  <div class="container mx-auto">
         <h1 class="my-5 ml-10">Shoppingcart</h1>
         @if($items != null)
             @foreach($items as $item)
@@ -34,7 +34,7 @@
             @endphp
             <div class="flex justify-end mt-5 items-center">
                 <p class="mr-4">Total: ${{ $price }}</p>
-                <a href="{{ url('/cart/order') }}" class="py-2 px-10 m-2" href="#">Pay</a>
+                <a href="{{ url('/cart/pay')}}" class="py-2 px-10 m-2">Pay</a>
                 <a href="{{ url('/cart/clear')}}">
 					<button class="bg-black text-white py-2 px-3 m-2">Clear cart</button>
 				</a>

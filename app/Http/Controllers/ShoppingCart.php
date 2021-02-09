@@ -50,7 +50,6 @@ class ShoppingCart extends Controller
 			'price' => $old['price']
         ];
 		Session::push('cart', $item);
-
 	}
 
 	public function deleteItem($id){
@@ -60,14 +59,12 @@ class ShoppingCart extends Controller
 
 	public function getSpecific($id){
 		$items = $this->getItems();
-		if($items === null){
-			return false;	
-		} else{
-			$specific = Arr::where($items, function ($value, $key) use ($id) {
-				return $value['id'] == $id;
-			});
-			return $specific;
-		}
+		if (!$items) {
+            return null;
+        }
+        $specific = Arr::where($items, function ($value, $key) use ($id) {
+            return $value['id'] == $id;
+        });
+        return $specific;
 	}
 }
-?>

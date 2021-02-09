@@ -9,10 +9,10 @@ class CategoryController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('role');
     }
-    
-  	public function create()
+
+    public function create()
     {
         return view('categories/create');
     }
@@ -23,13 +23,11 @@ class CategoryController extends Controller
             'title' => 'required',
         ]);
 
-    	// dd($data);
-
         $category = new App\Category;
 
         $category->title = $data['title'];
         $category->save();
-        return redirect('/shop');
+        return redirect('/admin');
     }
 
     public function delete($id)
@@ -37,7 +35,7 @@ class CategoryController extends Controller
         $category = App\Category::find($id);
 
         $category->delete();
-        return redirect('/shop');
+        return redirect('/admin');
     }
 
     public function edit($id)
@@ -58,6 +56,6 @@ class CategoryController extends Controller
         $category->title = $data['title'];
         $category->save();
 
-        return redirect('/shop');
+        return redirect('/admin');
     }
 }
